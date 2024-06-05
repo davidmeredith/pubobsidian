@@ -25,7 +25,7 @@ Approach allows both Burst & Batch workloads on the same cluster (rather than th
 You create a shared FS via persistent volume claims. Is easy to mount into both login node and worker node, but also other K8s nodes when needed for flexible integration - Nice.  
 
 Workflows can be designed and built using GitHub workflows for automation. 
-
+![](Pasted%20image%2020240605135413.png)
 ### SUNK K8s Scheduler (Updated SUNK scheduler supporting both K8s + Slurm)
 Allows scheduling from both sides. Effectively schedules native k8s workloads via slurm sched + native SLURM batch workloads: Is itself based on SLURM advanced scheduler. Supports:  Priority, pre-emption/Eviction, Drain/Active, Partitions all through the scheduler. <mark style="background: #FFB86CA6;">This scheduler replaces the regular K8s scheduler as it supports all K8s out of box + SLURM extras.  </mark>
 

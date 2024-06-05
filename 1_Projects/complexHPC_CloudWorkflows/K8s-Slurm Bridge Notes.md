@@ -25,7 +25,7 @@ Approach allows both Burst & Batch workloads on the same cluster (rather than th
 You create a shared FS via persistent volume claims. Is easy to mount into both login node and worker node, but also other K8s nodes when needed for flexible integration - Nice.  
 
 Workflows can be designed and built using GitHub workflows for automation. 
-![](attachments/Pasted%20image%2020240605142011.png)
+![](Pasted%20image%2020240605142011.png)
 ![](Pasted%20image%2020240605135413.png)
 ### SUNK K8s Scheduler (Updated SUNK scheduler supporting both K8s + Slurm)
 Allows scheduling from both sides. Effectively schedules native k8s workloads via slurm sched + native SLURM batch workloads: Is itself based on SLURM advanced scheduler. Supports:  Priority, pre-emption/Eviction, Drain/Active, Partitions all through the scheduler. <mark style="background: #FFB86CA6;">This scheduler replaces the regular K8s scheduler as it supports all K8s out of box + SLURM extras.  </mark>
@@ -36,9 +36,10 @@ https://slurm.schedmd.com/SLUG23/CoreWeave-SLUG23.pdf
 2. Compute Nodes in the middle layer 
 3. Per-tenant namespace (can be duplicated per tenant). All run as pods. Slurm login nodes ssh into login pods with SSH. 
 
-![[attachments/Pasted image 20240408090510.png]]
 
-![[Pasted image 20240408151127.png]]
+![](Pasted%20image%2020240408090510.png)
+
+![](Pasted%20image%2020240408151127.png)
 **Section A:** All of the typical Slurm components are deployed within a pod, each with its own configurable resource requests. Not pictured here, but this <mark style="background: #BBFABBA6;">also includes login nodes that users connect to in order to interact with the Slurm cluster (SSH)</mark>. Once connected to these login nodes, Kubernetes is abstracted away, and you get the experience of a normal Slurm cluster. 
 
 ‍**Section B:** Slurm configuration is needed throughout many of these components. By deploying them as <mark style="background: #BBFABBA6;">k8s ConfigMaps and Secrets</mark>, Slurm configuration files can be managed in a single place and mounted everywhere they’re needed. This includes Slurm configuration, <mark style="background: #BBFABBA6;">topology, prolog/epilog scripts, and sensitive information like DB passwords</mark>.
@@ -53,25 +54,25 @@ https://slurm.schedmd.com/SLUG23/CoreWeave-SLUG23.pdf
 - Run Nodeset pod on the nodes you want to make up your hybrid cluster - they don't have to be all nodes, but the Nodeset pod supports both the regular K8s workloads + slurm 
 - Cross between Daemonset and Statefulset because it doesn't request normal GPU resource as you would in normal GPU workloads, but rather a special <mark style="background: #BBFABBA6;">SUNK accelerator resource</mark>. This nodeset is deployed on all pods and supports both SLURM scheduler + normal K8s workloads too. 
 
-![[Pasted image 20240408090314.png]]
+![](Pasted%20image%2020240408090314.png)
 
 - Above: Shows 2 SUNK accelerator resource statuses (slurm-a40, slurm-h100). 
 - First 5 statuses are from regular K8s, Running and Draining are from SLUM. 
 - Protected/rolling updates mean we don't affect any customer jobs.
 ### Syncer
-![[Pasted image 20240408091138.png]]
+![](Pasted%20image%2020240408091138.png)
 
 ### Scheduler 
 AKA host both regular K8s workloads (inference on left) and SLURM batch reservations (on right)
-![[Pasted image 20240408091912.png]]
+![](Pasted%20image%2020240408091912.png)
 Allows dynamic switching between jobs based on their priority - e.g. if a high priority training job comes in, existing jobs can be evicted. So, <mark style="background: #BBFABBA6;">there is only one process from either SLURM OR from K8s using those nodes at any one time</mark>. 
 
 
 CoreWeave Hold the MLPerf record. 
 
-![[Pasted image 20240408092626.png]]
+![](Pasted%20image%2020240408092626.png)
 
-![[Pasted image 20240408130105.png]]
+![](Pasted%20image%2020240408130105.png)
 ### Another SUNK vid
 https://www.youtube.com/watch?v=3E1knT313tI
 
@@ -118,14 +119,14 @@ MPI Operator: great tool, important for HPC/AI on k8s, being proposed as a stand
 Priyanka Sharma - KubeCon keynote, SLURM on K8s. 
 
 
-![[Pasted image 20240410082258.png]]
+![](Pasted%20image%2020240410082258.png)
 Looks a lot like K8s
 Slurmd is similar to K8s API server 
 Slurmdbd similar to K8s etc (state)
 
 PMIx presents a unified API that hides many of the complexities of communication with these back-end run-time environments. Open MPI uses the PMIx API to discover, communicate, and coordinate with any supported back-end run-time system without needing to know the intimiate details of that system.
 
-![[Pasted image 20240410083114.png]]
+![](Pasted%20image%2020240410083114.png)
 
 
 
@@ -133,14 +134,14 @@ PMIx presents a unified API that hides many of the complexities of communication
 https://github.com/kcp-dev/kcp
 A uniform API to communicate with any platform on K8s - say you have a platform that you want to expose on K8s, you can use KCP to provide API access to that 
 
-![[Pasted image 20240410083825.png]]
+![](Pasted%20image%2020240410083825.png)
 
-![[Pasted image 20240410084109.png]]
+![](Pasted%20image%2020240410084109.png)
 
-![[Pasted image 20240410084446.png]]
+![](Pasted%20image%2020240410084446.png)
 Like a stripped down version of K8s (without pods, containers,nodes) but with a control plane with API server + K8s good stuff. 
 
-![[Pasted image 20240410085100.png]]
+![](Pasted%20image%2020240410085100.png)
 
 Multi-cluster approach: don't need to Sync across the two clusters (unlike SUNK). In the above slide, the SLURM/KCP resource is not a K8s cluster
 
@@ -151,10 +152,10 @@ Infra Provisioner / Bare metal provisioning (small box, bottom right): multiple 
    - MarkB is right in that that Job Controller / 'small management cluster' would still need to have scheduling across the two clusters for more complex scenarios. 
 
 
-![[Pasted image 20240410090212.png]]
+![](Pasted%20image%2020240410090212.png)
 
 KCP to be open sourced soon, below slide was presented on Apr 3rd:
-![[Pasted image 20240410090412.png]]
+![](Pasted%20image%2020240410090412.png)
 
 Q. Why twist K8s to HPC? 
 A. We don't, add SLURM as a tool into CNCF and use multi-cluster approach like KCP to bridge (unlike SUNK)

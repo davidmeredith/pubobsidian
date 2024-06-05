@@ -1,0 +1,168 @@
+{
+  "main": {
+    "id": "17d2b6c6d5b21ede",
+    "type": "split",
+    "children": [
+      {
+        "id": "7003cca17b1ded08",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "62db2300c13d3a63",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1_Projects/complexHPC_CloudWorkflows/K8s-Slurm Bridge Notes.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "906e845f6807318e",
+    "type": "split",
+    "children": [
+      {
+        "id": "0fa7f5c015e53d1a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ef137eb69ef614cb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "84b47699a6c60fce",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "d06cab5d4f00b40a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6eccbde70274b0ac",
+    "type": "split",
+    "children": [
+      {
+        "id": "026f1ec3e70f6edf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f6dc6c809b60948d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "1_Projects/complexHPC_CloudWorkflows/K8s-Slurm Bridge Notes.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "bad20f2fef157b5f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "1_Projects/complexHPC_CloudWorkflows/K8s-Slurm Bridge Notes.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2c2a14a650dc6f51",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "59d2fa01756a3a30",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "1_Projects/complexHPC_CloudWorkflows/K8s-Slurm Bridge Notes.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "62db2300c13d3a63",
+  "lastOpenFiles": [
+    "Welcome.md",
+    "1_Projects/complexHPC_CloudWorkflows/attachments/Pasted image 20240410090212.png",
+    "1_Projects/complexHPC_CloudWorkflows/attachments/Pasted image 20240408090314.png",
+    "1_Projects/complexHPC_CloudWorkflows/attachments/Pasted image 20240410090412.png",
+    "1_Projects/complexHPC_CloudWorkflows/attachments/Pasted image 20240408090510.png",
+    "1_Projects/complexHPC_CloudWorkflows/attachments/Pasted image 20240408091912.png",
+    "1_Projects/complexHPC_CloudWorkflows/attachments/Pasted image 20240410082258.png",
+    "1_Projects/complexHPC_CloudWorkflows/attachments/Pasted image 20240408130105.png",
+    "1_Projects/complexHPC_CloudWorkflows/attachments/Pasted image 20240408092626.png",
+    "1_Projects/complexHPC_CloudWorkflows/attachments/Pasted image 20240408091138.png",
+    "1_Projects/complexHPC_CloudWorkflows/attachments/Pasted image 20240410083825.png",
+    "1_Projects/complexHPC_CloudWorkflows/attachments",
+    "1_Projects/complexHPC_CloudWorkflows/K8s-Slurm Bridge Notes.md",
+    "1_Projects/complexHPC_CloudWorkflows",
+    "1_Projects/Untitled.md",
+    "1_Projects"
+  ]
+}

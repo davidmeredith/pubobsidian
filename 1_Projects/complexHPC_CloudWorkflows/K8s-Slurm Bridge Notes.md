@@ -26,6 +26,7 @@ You create a shared FS via persistent volume claims. Is easy to mount into both 
 
 Workflows can be designed and built using GitHub workflows for automation. 
 ![](attachments/Pasted%20image%2020240605142011.png)
+![](Pasted%20image%2020240605135413.png)
 ### SUNK K8s Scheduler (Updated SUNK scheduler supporting both K8s + Slurm)
 Allows scheduling from both sides. Effectively schedules native k8s workloads via slurm sched + native SLURM batch workloads: Is itself based on SLURM advanced scheduler. Supports:  Priority, pre-emption/Eviction, Drain/Active, Partitions all through the scheduler. <mark style="background: #FFB86CA6;">This scheduler replaces the regular K8s scheduler as it supports all K8s out of box + SLURM extras.  </mark>
 
@@ -35,7 +36,7 @@ https://slurm.schedmd.com/SLUG23/CoreWeave-SLUG23.pdf
 2. Compute Nodes in the middle layer 
 3. Per-tenant namespace (can be duplicated per tenant). All run as pods. Slurm login nodes ssh into login pods with SSH. 
 
-![[Pasted image 20240408090510.png]]
+![[attachments/Pasted image 20240408090510.png]]
 
 ![[Pasted image 20240408151127.png]]
 **Section A:** All of the typical Slurm components are deployed within a pod, each with its own configurable resource requests. Not pictured here, but this <mark style="background: #BBFABBA6;">also includes login nodes that users connect to in order to interact with the Slurm cluster (SSH)</mark>. Once connected to these login nodes, Kubernetes is abstracted away, and you get the experience of a normal Slurm cluster. 
